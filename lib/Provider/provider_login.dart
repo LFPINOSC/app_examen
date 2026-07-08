@@ -19,6 +19,7 @@ class ProviderLogin extends ChangeNotifier {
     notifyListeners();
     try {
       final loginResponse = await _servicioLogin.login(request);
+      await _authService.saveToken(loginResponse.token!);
       _token = loginResponse.token;
       _errorMessage = null;
     } catch (e) {

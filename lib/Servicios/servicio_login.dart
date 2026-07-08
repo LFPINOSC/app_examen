@@ -8,7 +8,7 @@ import 'package:app_examen/auth_service.dart';
 
 class ServicioLogin {
   final AuthService _authService = AuthService();
-  static const String baseUrl = "${ApiConfig.baseUrl}/login";
+  static const String baseUrl = "${ApiConfig.baseUrl}";
   Future<LoginResponse> login(LoginRequest request) async {
     final response = await http.post(
       Uri.parse('${baseUrl}/login'),

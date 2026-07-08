@@ -7,6 +7,9 @@ class ProviderGenero extends ChangeNotifier {
   List<Genero> _generos = [];
   bool _isLoading = false;
   String? _errorMessage;
+  List<Genero> get generos => _generos;
+  bool get isLoading => _isLoading;
+  String? get errorMessage => _errorMessage;
   Future<void> cargarGeneros() async {
     _isLoading = true;
     notifyListeners();
